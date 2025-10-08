@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tecno-Ciencia</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    
+    <header class="header">
+        <div class="logo">
+            <img src="img/logo_ver1.png" alt="Logo Tecno-Ciencia" >
+        </div>
+
+        <nav>
+            <p>Tecno-Ciencia</p>
+        </nav>
+
+        <a href="" class="btn">
+            <button>Contacto</button>
+        </a>
+    </header>
+
+<section class="image-gallery">
+    <div class="image-item" onclick="showDetails('img/loging.png', 'Pantalla de inicio de sesión de Tecno-Ciencia, donde el usuario puede ingresar sus credenciales para acceder a visualizar todos los proyectos y subir el suyo propio.')">
+        <img src="img/loging.png" alt="Inicio de sesión">
+    </div>
+
+    <div class="image-item" onclick="showDetails('img/inicio.png', 'Pantalla principal que muestra algunos proyectos de forma automatica, donde se visualizara el nombre del proyecto, el tipo de categoria y la participacion de alguna institucion que avala que son participantes del proyecto.')">
+        <img src="img/inicio.png" alt="Pantalla de inicio">
+    </div>
+
+    <div class="image-item" onclick="showDetails('img/subirproyecto.png', 'Interfaz donde los usuarios pueden subir proyectos científicos y tecnológicos. Pueden agregar mas informcacion para cada proyecto, categoria, rol del encargado del proyecto, meta financiara y mas.')">
+        <img src="img/subirproyecto.png" alt="Subir proyecto">
+    </div>
+
+    <div class="image-item" onclick="showDetails('img/DonationScreen.png', 'Sección dedicada a donaciones y apoyo a proyectos en desarrollo. Con diferentes formas de pago para apoyar, junto con apartado para datos del donador.')">
+        <img src="img/DonationScreen.png" alt="Pantalla de donaciones">
+    </div>
+
+    <div class="image-item" onclick="showDetails('img/perfilpublico.png', 'Perfil público de un usuario donde se muestran sus proyectos y aportes. Mostrando datos del usuario que se desean ver como proyectos en los que partiipa y los patrocinadores  con lo que cuenta.')">
+        <img src="img/perfilpublico.png" alt="Perfil público">
+    </div>
+
+    <div class="image-item" onclick="showDetails('img/PerfilUsuario.png', 'Perfil privado del usuario con opciones de configuración y administración. Incluyendo la gestion de Proyectos y un historial de actividades recientes.')">
+        <img src="img/PerfilUsuario.png" alt="Perfil de usuario">
+    </div>
+</section>
+
+<!-- Overlay principal -->
+<div class="overlay" id="overlay">
+  <div class="overlay-content">
+    <div class="image-scroll">
+      <img id="overlay-img" src="" alt="Imagen seleccionada">
+    </div>
+    <div class="overlay-text" id="overlay-text"></div>
+    <span class="close-btn" onclick="closeOverlay()">×</span>
+  </div>
+</div>
+
+
+
+</body>
+
+<nav class="contact-bar">
+    <ul>
+        <li><strong>📧 Email:</strong> <a href="Email: somos_tecno-ciencia@gamil.com">somos_tecno-ciencia@gmail.com</a></li>
+        <li><strong>📞 Tel:</strong> <a href="tel:+524681026706">+52 468 102 6706</a></li>
+        <li><strong>📍 Ubicación:</strong> Dolores Hidalgo, GTO</li>
+    </ul>
+</nav>
+ 
+<script>
+function showDetails(imageSrc, text) {
+    document.getElementById('overlay-img').src = imageSrc;
+    document.getElementById('overlay-text').textContent = text;
+    document.getElementById('overlay').style.display = 'flex';
+}
+
+function closeOverlay() {
+    document.getElementById('overlay').style.display = 'none';
+}
+</script>
+
+
+</html>

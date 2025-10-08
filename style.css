@@ -1,0 +1,239 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito', sans-serif;
+    font-size: 20px;
+
+}
+
+body{
+    background-color: aliceblue;
+}
+
+/* === HEADER === */
+.header {
+    background-color: #1b3030;         /* fondo oscuro elegante */
+    display: flex;
+    justify-content: space-between;    /* espacio entre logo, texto y botón */
+    align-items: center;
+    height: 85px;
+    padding: 0 10%;
+    color: #eceff1;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+/* Logo */
+.header .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+.header .logo img {
+    height: 65px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+.header .logo img:hover {
+    transform: scale(1.1);
+}
+
+/* Texto del centro */
+.header nav p {
+    font-size: 28px;
+    font-weight: 700;
+    color: #ffbc0e;                   /* amarillo dorado tecnológico */
+    letter-spacing: 1px;
+    margin: 0;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+/* Botón de contacto */
+.header .btn button {
+    font-weight: 700;
+    color: #1b3039;
+    padding: 10px 25px;
+    background: #eceff1;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.header .btn button:hover {
+    background-color: #ffbc0e;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+
+.image-gallery {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+.image-item {
+    position: relative;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.image-item:hover {
+    transform: scale(1.1);
+    z-index: 1;
+}
+
+.image-item img {
+    width: 150px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.image-details {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+    padding: 20px;
+    border-top: 2px solid #ccc;
+}
+
+.image-details img {
+    width: 300px;
+    border-radius: 10px;
+}
+
+.image-details p {
+    max-width: 400px;
+    font-size: 16px;
+    color: #333;
+}
+
+
+/* Fondo oscuro semitransparente */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Contenedor de imagen + texto */
+.overlay-content {
+  background: #fff;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  width: 90%;
+  max-width: 1000px;
+  max-height: 90vh;
+  overflow: auto;
+  position: relative;
+}
+
+/* Imagen con scroll interno si es grande */
+.image-scroll {
+  flex: 1;
+  max-height: 80vh;
+  overflow-y: auto;  /* ✅ scroll vertical visible si se excede */
+  overflow-x: hidden;
+  margin-right: 20px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background-color: #f8f9fa;
+}
+
+.image-scroll img {
+  width: auto;
+  height: auto;
+  max-width: none;   /*  evita que se redimensione automáticamente */
+  max-height: none;  /*  evita el ajuste a la ventana */
+  display: block;
+}
+
+
+/* Imagen ampliada */
+#overlay-img {
+    max-height: 80vh;
+    width: auto;
+    object-fit: contain;
+    border-radius: 8px;
+    overflow-y: auto;
+    display: block;
+}
+
+/* Texto descriptivo */
+.overlay-text {
+  flex: 1;
+  max-height: 80vh;
+  overflow-y: auto; /* si el texto también es largo */
+  font-size: 18px;
+  color: #333;
+  line-height: 1.4;
+}
+
+/* Botón cerrar */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 28px;
+  cursor: pointer;
+  color: #555;
+}
+
+.close-btn:hover {
+  color: #000;
+}
+
+.contact-bar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 10px 0;
+    font-size: 14px;
+    z-index: 999;
+    box-shadow: 0 -2px 6px rgba(0,0,0,0.3);
+}
+
+.contact-bar ul {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+}
+
+.contact-bar li {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.contact-bar a {
+    color: #00bfff;
+    text-decoration: none;
+}
+
+.contact-bar a:hover {
+    text-decoration: underline;
+}
